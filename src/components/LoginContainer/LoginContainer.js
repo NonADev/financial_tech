@@ -25,12 +25,12 @@ export default class LoginContainer extends React.Component {
                                type={"password"} label={"Password"} variant={"outlined"}
                     />
                 </Grid>
-                <Grid item xs={12} style={{marginLeft: "14vw", marginTop: "2vh"}}>
+                <Grid item xs={12} style={{marginLeft: "14vw", marginTop: "2vh", fontWeight: "bolder"}}>
                     <Checkbox color={"primary"}/><span>Remember me</span>
                 </Grid>
                 <Grid item xs={12} align={"center"} style={{marginTop: "4vh"}}>
                     <Button onClick={this.props.loginHandShake} size={"large"} variant="contained" color="primary">
-                        Primary
+                        login
                     </Button>
                 </Grid>
             </Grid>
