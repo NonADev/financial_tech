@@ -1,13 +1,14 @@
 import React from 'react';
-import LoginPage from "./pages/LoginPage/LoginPage";
+import CurrentPage from "./pages/CurrentPage/CurrentPage";
 
 
 export default class App extends React.Component {
 
+
     render() {
         return (
             <div>
-                <LoginPage/>
+                <CurrentPage />
             </div>
         );
     }
