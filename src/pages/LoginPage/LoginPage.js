@@ -7,6 +7,7 @@ export default class LoginPage extends React.Component {
             e.preventDefault();
     }
 
+
     loginHandShake() {
         this.props.setUserSecure(1);
     }
