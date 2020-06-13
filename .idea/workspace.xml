@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a625c90f-d82a-4c6a-aa39-95827607353b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LoginContainer/LoginContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginContainer/LoginContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/DBConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DBConfig.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/LoginPage/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginPage/LoginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/PointPage/PointPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PointPage/PointPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,13 +29,14 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/PointPage" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -43,7 +45,11 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/PointPage" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/images" />
       <recent name="$PROJECT_DIR$/src/pages/LoginPage" />
     </key>
   </component>
@@ -75,36 +81,58 @@
       <workItem from="1591577651047" duration="8391000" />
       <workItem from="1591656882552" duration="3698000" />
       <workItem from="1591927407211" duration="3970000" />
+      <workItem from="1592008223030" duration="46000" />
+      <workItem from="1592008281377" duration="666000" />
+      <workItem from="1592075891106" duration="10132000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="420" y="106" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591579281992">
       <screen x="0" y="0" width="1366" height="725" />
     </state>
     <state x="420" y="106" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.725@0.0.1366.725" timestamp="1591579281992" />
-    <state width="1343" height="167" key="GridCell.Tab.0.bottom" timestamp="1591930031370">
+    <state x="389" y="49" width="578" height="637" key="#npm_start" timestamp="1592008264927">
       <screen x="0" y="0" width="1366" height="725" />
     </state>
-    <state width="1343" height="167" key="GridCell.Tab.0.bottom/0.0.1366.725@0.0.1366.725" timestamp="1591930031370" />
-    <state width="1343" height="167" key="GridCell.Tab.0.center" timestamp="1591930031369">
+    <state x="389" y="49" width="578" height="637" key="#npm_start/0.0.1366.725@0.0.1366.725" timestamp="1592008264927" />
+    <state width="1343" height="167" key="GridCell.Tab.0.bottom" timestamp="1592076094722">
       <screen x="0" y="0" width="1366" height="725" />
     </state>
-    <state width="1343" height="167" key="GridCell.Tab.0.center/0.0.1366.725@0.0.1366.725" timestamp="1591930031369" />
-    <state width="1343" height="167" key="GridCell.Tab.0.left" timestamp="1591930031369">
+    <state width="1343" height="167" key="GridCell.Tab.0.bottom/0.0.1366.725@0.0.1366.725" timestamp="1592076094722" />
+    <state width="1343" height="167" key="GridCell.Tab.0.center" timestamp="1592076094721">
       <screen x="0" y="0" width="1366" height="725" />
     </state>
-    <state width="1343" height="167" key="GridCell.Tab.0.left/0.0.1366.725@0.0.1366.725" timestamp="1591930031369" />
-    <state width="1343" height="167" key="GridCell.Tab.0.right" timestamp="1591930031370">
+    <state width="1343" height="167" key="GridCell.Tab.0.center/0.0.1366.725@0.0.1366.725" timestamp="1592076094721" />
+    <state width="1343" height="167" key="GridCell.Tab.0.left" timestamp="1592076094720">
       <screen x="0" y="0" width="1366" height="725" />
     </state>
-    <state width="1343" height="167" key="GridCell.Tab.0.right/0.0.1366.725@0.0.1366.725" timestamp="1591930031370" />
+    <state width="1343" height="167" key="GridCell.Tab.0.left/0.0.1366.725@0.0.1366.725" timestamp="1592076094720" />
+    <state width="1343" height="167" key="GridCell.Tab.0.right" timestamp="1592076094722">
+      <screen x="0" y="0" width="1366" height="725" />
+    </state>
+    <state width="1343" height="167" key="GridCell.Tab.0.right/0.0.1366.725@0.0.1366.725" timestamp="1592076094722" />
     <state x="347" y="156" key="run.anything.popup" timestamp="1591930713922">
       <screen x="0" y="0" width="1366" height="725" />
     </state>
     <state x="347" y="156" key="run.anything.popup/0.0.1366.725@0.0.1366.725" timestamp="1591930713922" />
+    <state x="346" y="46" width="672" height="678" key="search.everywhere.popup" timestamp="1592081876289">
+      <screen x="0" y="0" width="1366" height="725" />
+    </state>
+    <state x="346" y="46" width="672" height="678" key="search.everywhere.popup/0.0.1366.725@0.0.1366.725" timestamp="1592081876289" />
   </component>
 </project>
