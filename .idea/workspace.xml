@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a625c90f-d82a-4c6a-aa39-95827607353b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LoginContainer/LoginContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginContainer/LoginContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/DBConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DBConfig.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/LoginPage/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginPage/LoginPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/PointPage/PointPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PointPage/PointPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +100,8 @@
       <workItem from="1591927407211" duration="3970000" />
       <workItem from="1592008223030" duration="46000" />
       <workItem from="1592008281377" duration="666000" />
-      <workItem from="1592075891106" duration="10132000" />
+      <workItem from="1592075891106" duration="11485000" />
+      <workItem from="1592167206554" duration="4258000" />
     </task>
     <servers />
   </component>
@@ -100,6 +118,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="420" y="106" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591579281992">
@@ -110,22 +129,22 @@
       <screen x="0" y="0" width="1366" height="725" />
     </state>
     <state x="389" y="49" width="578" height="637" key="#npm_start/0.0.1366.725@0.0.1366.725" timestamp="1592008264927" />
-    <state width="1343" height="167" key="GridCell.Tab.0.bottom" timestamp="1592076094722">
+    <state width="1343" height="167" key="GridCell.Tab.0.bottom" timestamp="1592167391501">
       <screen x="0" y="0" width="1366" height="725" />
     </state>
-    <state width="1343" height="167" key="GridCell.Tab.0.bottom/0.0.1366.725@0.0.1366.725" timestamp="1592076094722" />
-    <state width="1343" height="167" key="GridCell.Tab.0.center" timestamp="1592076094721">
+    <state width="1343" height="167" key="GridCell.Tab.0.bottom/0.0.1366.725@0.0.1366.725" timestamp="1592167391501" />
+    <state width="1343" height="167" key="GridCell.Tab.0.center" timestamp="1592167391501">
       <screen x="0" y="0" width="1366" height="725" />
     </state>
-    <state width="1343" height="167" key="GridCell.Tab.0.center/0.0.1366.725@0.0.1366.725" timestamp="1592076094721" />
-    <state width="1343" height="167" key="GridCell.Tab.0.left" timestamp="1592076094720">
+    <state width="1343" height="167" key="GridCell.Tab.0.center/0.0.1366.725@0.0.1366.725" timestamp="1592167391501" />
+    <state width="1343" height="167" key="GridCell.Tab.0.left" timestamp="1592167391500">
       <screen x="0" y="0" width="1366" height="725" />
     </state>
-    <state width="1343" height="167" key="GridCell.Tab.0.left/0.0.1366.725@0.0.1366.725" timestamp="1592076094720" />
-    <state width="1343" height="167" key="GridCell.Tab.0.right" timestamp="1592076094722">
+    <state width="1343" height="167" key="GridCell.Tab.0.left/0.0.1366.725@0.0.1366.725" timestamp="1592167391500" />
+    <state width="1343" height="167" key="GridCell.Tab.0.right" timestamp="1592167391501">
       <screen x="0" y="0" width="1366" height="725" />
     </state>
-    <state width="1343" height="167" key="GridCell.Tab.0.right/0.0.1366.725@0.0.1366.725" timestamp="1592076094722" />
+    <state width="1343" height="167" key="GridCell.Tab.0.right/0.0.1366.725@0.0.1366.725" timestamp="1592167391501" />
     <state x="347" y="156" key="run.anything.popup" timestamp="1591930713922">
       <screen x="0" y="0" width="1366" height="725" />
     </state>

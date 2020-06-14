@@ -5,6 +5,7 @@ import Button from "@material-ui/core/Button";
 
 import TextField from "@material-ui/core/TextField";
 import Checkbox from "@material-ui/core/Checkbox";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 import {useIndexedDB} from "react-indexed-db";
 
@@ -60,7 +61,11 @@ export default class LoginContainer extends React.Component {
                     />
                 </Grid>
                 <Grid item xs={12} style={{marginLeft: "14vw", marginTop: "2vh", fontWeight: "bolder"}}>
-                    <Checkbox color={"primary"}/><span>Remember me</span>
+                    <FormControlLabel label={"Remember me"}
+                        control={
+                            <Checkbox name={"rememberLogin"} color={"primary"} />
+                        }
+                    />
                 </Grid>
                 <Grid item xs={12} align={"center"} style={{marginTop: "4vh"}}>
                     <Button onClick={this.writeAccess.bind(this)} size={"large"} variant="contained" color="primary">
