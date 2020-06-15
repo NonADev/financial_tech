@@ -10,7 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 
 import DateFnsUtils from '@date-io/date-fns';
-import {DatePicker,MuiPickersUtilsProvider} from '@material-ui/pickers';
+import {DatePicker, MuiPickersUtilsProvider} from '@material-ui/pickers';
 
 function a11yProps(index) {
     return {
@@ -20,7 +20,7 @@ function a11yProps(index) {
 }
 
 function TabPanel(props) {
-    const { children, value, index, ...other } = props;
+    const {children, value, index, ...other} = props;
     return (
         <div
             role="tabpanel"
@@ -38,22 +38,36 @@ function TabPanel(props) {
     );
 }
 
-export default class PointPage extends React.Component{
+export default class PointPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             tabOption: 0,
-            selectorDate: new Date()
+            selectorDate: new Date(),
+            workStatus: "resting",
+            workButtonColor: "primary"
         };
     }
 
-    dateChanger(v){
+    setWorkStopStatus(e) {
+        let set, col;
+        (this.state.workButtonColor === "primary") ? col = "secondary" : col = "primary";
+        (this.state.workStatus === "resting") ? set = "working" : set = "resting";
+        this.setState({
+            workStatus: set
+        });
+        this.setState({
+            workButtonColor: col
+        });
+    }
+
+    setDate(v) {
         this.setState({
             selectorDate: v
         })
     }
 
-    tabChangeHandler(e, v){
+    tabChangeHandler(e, v) {
         this.setState({
             tabOption: v
         })
@@ -62,23 +76,36 @@ export default class PointPage extends React.Component{
     render() {
         document.body.style.backgroundColor = '#eff2f2';
         let imgIcon = require("../../images/2858066.png");
-        return(
+        return (
             <div>
                 <Grid container>
                     <Grid item style={{marginLeft: "1vw", marginTop: "1vh"}} xs={4}>
-                        <Avatar style={{backgroundColor: "white", height: "27vw", width: "27vw"}} variant={"square"} src={imgIcon}/>
+                        <Avatar style={{backgroundColor: "white", height: "27vw", width: "27vw"}} variant={"square"}
+                                src={imgIcon}/>
                     </Grid>
                     <Grid item xs={7}>
-                        <Button style={{marginTop: "2vh", minWidth: "60vw", borderRadius: "30px",color: "white", backgroundColor: '#499bbf'}}>Gabi Sampaio</Button>
-                        <Button style={{marginTop: "1vh", minWidth: "60vw", borderRadius: "30px",color: "white", backgroundColor: '#50bf3e'}}>React Developer</Button>
+                        <Button style={{
+                            marginTop: "2vh",
+                            minWidth: "60vw",
+                            borderRadius: "30px",
+                            color: "white",
+                            backgroundColor: '#499bbf'
+                        }}>Gabi Sampaio</Button>
+                        <Button style={{
+                            marginTop: "1vh",
+                            minWidth: "60vw",
+                            borderRadius: "30px",
+                            color: "white",
+                            backgroundColor: '#50bf3e'
+                        }}>React Developer</Button>
                     </Grid>
                     <Grid item xs={12} style={{display: 'flex', justifyContent: 'center'}}>
-                        <Paper style={{marginTop:"3vh", width: "93vw",minHeight:"20vh"}}>
+                        <Paper style={{marginTop: "3vh", width: "93vw", minHeight: "20vh"}}>
                             <Grid container>
                                 <Grid item xs={6} style={{marginTop: "5vh", textAlign: "center"}}>
                                     <p>Entrada<br/>8:00</p>
                                 </Grid>
-                                <Grid item xs={6} style={{marginTop: "5vh",textAlign: "center"}}>
+                                <Grid item xs={6} style={{marginTop: "5vh", textAlign: "center"}}>
                                     <p>Saida<br/>16:00</p>
                                 </Grid>
                             </Grid>
@@ -104,8 +131,14 @@ export default class PointPage extends React.Component{
                             >
                                 <TabPanel value={this.state.tabOption} index={0}>
                                     <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                                        <DatePicker value={this.state.selectorDate} onChange={this.dateChanger.bind(this)} />
+                                        <DatePicker value={this.state.selectorDate} onChange={this.setDate.bind(this)}/>
                                     </MuiPickersUtilsProvider>
+                                    <Button value={this.state.workStatus} onClick={this.setWorkStopStatus.bind(this)}
+                                            style={{maxWidth: "21vw", marginLeft: "3vw"}} variant="contained"
+                                            size={"medium"}
+                                            color={this.state.workButtonColor}>
+                                        {this.state.workStatus}
+                                    </Button>
                                 </TabPanel>
                                 <TabPanel value={this.state.tabOption} index={1}>
                                     PAGAMENTOS
