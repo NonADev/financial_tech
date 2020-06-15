@@ -6,11 +6,9 @@ import Paper from "@material-ui/core/Paper";
 import Tabs from '@material-ui/core/Tabs';
 import SwipeableViews from 'react-swipeable-views';
 import Tab from '@material-ui/core/Tab';
-import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-
-import DateFnsUtils from '@date-io/date-fns';
-import {DatePicker, MuiPickersUtilsProvider} from '@material-ui/pickers';
+import Typography from "@material-ui/core/Typography";
+import SimpleDatePicker from "../../components/SimpleDatePicker/SimpleDatePicker";
 
 function a11yProps(index) {
     return {
@@ -103,10 +101,10 @@ export default class PointPage extends React.Component {
                         <Paper style={{marginTop: "3vh", width: "93vw", minHeight: "20vh"}}>
                             <Grid container>
                                 <Grid item xs={6} style={{marginTop: "5vh", textAlign: "center"}}>
-                                    <p>Entrada<br/>8:00</p>
+                                    <Typography>Entrada<br/>8:00</Typography>
                                 </Grid>
                                 <Grid item xs={6} style={{marginTop: "5vh", textAlign: "center"}}>
-                                    <p>Saida<br/>16:00</p>
+                                    <Typography>Saida<br/>16:00</Typography>
                                 </Grid>
                             </Grid>
                         </Paper>
@@ -130,9 +128,8 @@ export default class PointPage extends React.Component {
                                 onChangeIndex={this.tabChangeHandler.bind(this)}
                             >
                                 <TabPanel value={this.state.tabOption} index={0}>
-                                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                                        <DatePicker value={this.state.selectorDate} onChange={this.setDate.bind(this)}/>
-                                    </MuiPickersUtilsProvider>
+                                    <SimpleDatePicker selectorDate={this.state.selectorDate}
+                                                      setDate={this.setDate.bind(this)}/>
                                     <Button value={this.state.workStatus} onClick={this.setWorkStopStatus.bind(this)}
                                             style={{maxWidth: "21vw", marginLeft: "3vw"}} variant="contained"
                                             size={"medium"}
@@ -141,10 +138,10 @@ export default class PointPage extends React.Component {
                                     </Button>
                                 </TabPanel>
                                 <TabPanel value={this.state.tabOption} index={1}>
-                                    PAGAMENTOS
+                                    <Typography>PAGAMENTOS</Typography>
                                 </TabPanel>
                                 <TabPanel value={this.state.tabOption} index={2}>
-                                    OPÇÕES
+                                    <Typography>OPÇÕES</Typography>
                                 </TabPanel>
                             </SwipeableViews>
                         </Paper>
