@@ -9,6 +9,9 @@ import Tab from '@material-ui/core/Tab';
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 
+import DateFnsUtils from '@date-io/date-fns';
+import {DatePicker,MuiPickersUtilsProvider} from '@material-ui/pickers';
+
 function a11yProps(index) {
     return {
         id: `full-width-tab-${index}`,
@@ -39,8 +42,15 @@ export default class PointPage extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            tabOption: 0
+            tabOption: 0,
+            selectorDate: new Date()
         };
+    }
+
+    dateChanger(v){
+        this.setState({
+            selectorDate: v
+        })
     }
 
     tabChangeHandler(e, v){
@@ -89,18 +99,19 @@ export default class PointPage extends React.Component{
                                 <Tab label="Opções" {...a11yProps(2)} />
                             </Tabs>
                             <SwipeableViews
-
                                 index={this.state.tabOption}
                                 onChangeIndex={this.tabChangeHandler.bind(this)}
                             >
                                 <TabPanel value={this.state.tabOption} index={0}>
-                                    Calendario
+                                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                                        <DatePicker value={this.state.selectorDate} onChange={this.dateChanger.bind(this)} />
+                                    </MuiPickersUtilsProvider>
                                 </TabPanel>
                                 <TabPanel value={this.state.tabOption} index={1}>
-                                    Pagamentos
+                                    PAGAMENTOS
                                 </TabPanel>
                                 <TabPanel value={this.state.tabOption} index={2}>
-                                    Opções
+                                    OPÇÕES
                                 </TabPanel>
                             </SwipeableViews>
                         </Paper>

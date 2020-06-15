@@ -23,7 +23,7 @@ export default class CurrentPage extends React.Component {
                     userSecure={this.state.userSecure}
                     setUserSecure={this.setUserSecure.bind(this)}
                 />
-                : <PointPage/>
+                : <PointPage />
         );
     }
 }

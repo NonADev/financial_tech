@@ -19,9 +19,7 @@ export default class LoginContainer extends React.Component {
     }
 
     setUsername(evt) {
-        let val = evt.target.value;
-        val = val.replace(/[^\x00-\x7F]/ig, '');
-        this.setState({username: val});
+        this.setState({username: evt.target.value});
     }
 
     setPassword(evt) {
