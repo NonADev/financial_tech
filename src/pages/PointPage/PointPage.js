@@ -9,6 +9,11 @@ import Tab from '@material-ui/core/Tab';
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import SimpleDatePicker from "../../components/SimpleDatePicker/SimpleDatePicker";
+import {red,blue} from "@material-ui/core/colors";
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+const redTheme = createMuiTheme({palette: {primary: red}});
+const blueTheme = createMuiTheme({ palette: { primary: blue } })
 
 function a11yProps(index) {
     return {
@@ -43,19 +48,17 @@ export default class PointPage extends React.Component {
             tabOption: 0,
             selectorDate: new Date(),
             workStatus: "resting",
-            workButtonColor: "primary"
+            theme: blueTheme
         };
     }
 
     setWorkStopStatus(e) {
-        let set, col;
-        (this.state.workButtonColor === "primary") ? col = "secondary" : col = "primary";
+        let set, the;
+        (this.state.theme === blueTheme) ? the = redTheme : the = blueTheme;
         (this.state.workStatus === "resting") ? set = "working" : set = "resting";
         this.setState({
-            workStatus: set
-        });
-        this.setState({
-            workButtonColor: col
+            workStatus: set,
+            theme: the
         });
     }
 
@@ -73,6 +76,7 @@ export default class PointPage extends React.Component {
 
     render() {
         document.body.style.backgroundColor = '#eff2f2';
+        console.log(blue);
         let imgIcon = require("../../images/2858066.png");
         return (
             <div>
@@ -105,10 +109,10 @@ export default class PointPage extends React.Component {
                     <Grid item xs={12} style={{display: 'flex', justifyContent: 'center'}}>
                         <Paper style={{marginTop: "3vh", width: "93vw", minHeight: "20vh"}}>
                             <Grid container>
-                                <Grid item xs={6} style={{marginTop: "5vh", textAlign: "center"}}>
+                                <Grid item xs={6} style={{marginTop: "6vh", textAlign: "center"}}>
                                     <Typography>Entrada<br/>8:00</Typography>
                                 </Grid>
-                                <Grid item xs={6} style={{marginTop: "5vh", textAlign: "center"}}>
+                                <Grid item xs={6} style={{marginTop: "6vh", textAlign: "center"}}>
                                     <Typography>Saida<br/>16:00</Typography>
                                 </Grid>
                             </Grid>
@@ -135,12 +139,14 @@ export default class PointPage extends React.Component {
                                 <TabPanel value={this.state.tabOption} index={0}>
                                     <SimpleDatePicker selectorDate={this.state.selectorDate}
                                                       setDate={this.setDate.bind(this)}/>
-                                    <Button value={this.state.workStatus} onClick={this.setWorkStopStatus.bind(this)}
-                                            style={{maxWidth: "21vw", marginLeft: "3vw"}} variant="contained"
-                                            size={"medium"}
-                                            color={this.state.workButtonColor}>
-                                        {this.state.workStatus}
-                                    </Button>
+                                    <MuiThemeProvider theme={this.state.theme}>
+                                        <Button value={this.state.workStatus} onClick={this.setWorkStopStatus.bind(this)}
+                                                style={{maxWidth: "21vw", marginLeft: "3vw"}} variant="contained"
+                                                size={"medium"}
+                                                color={"primary"}>
+                                            {this.state.workStatus}
+                                        </Button>
+                                    </MuiThemeProvider>
                                 </TabPanel>
                                 <TabPanel value={this.state.tabOption} index={1}>
                                     <Typography>PAGAMENTOS</Typography>
