@@ -114,7 +114,7 @@ export default class PointPage extends React.Component {
                             </Grid>
                         </Paper>
                     </Grid>
-                    <Grid item xs={12} style={{marginTop: "3vh"}}>
+                    <Grid item xs={12} style={{paddingLeft: "1vw", paddingRight: "1vw", marginTop: "3vh"}}>
                         <Paper>
                             <Tabs
                                 value={this.state.tabOption}
