@@ -76,7 +76,6 @@ export default class PointPage extends React.Component {
 
     render() {
         document.body.style.backgroundColor = '#eff2f2';
-        console.log(blue);
         let imgIcon = require("../../images/2858066.png");
         return (
             <div>
