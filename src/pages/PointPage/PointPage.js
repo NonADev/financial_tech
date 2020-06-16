@@ -78,7 +78,12 @@ export default class PointPage extends React.Component {
             <div>
                 <Grid container>
                     <Grid item style={{marginLeft: "1vw", marginTop: "1vh"}} xs={4}>
-                        <Avatar style={{backgroundColor: "white", height: "27vw", width: "27vw"}} variant={"square"}
+                        <Avatar style={{
+                            boxShadow: "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
+                            backgroundColor: "white",
+                            height: "27vw",
+                            width: "27vw"
+                        }} variant={"square"}
                                 src={imgIcon}/>
                     </Grid>
                     <Grid item xs={7}>
