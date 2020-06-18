@@ -118,7 +118,7 @@ export default class PointPage extends React.Component {
                             </Grid>
                         </Paper>
                     </Grid>
-                    <Grid item xs={12} style={{paddingLeft: "1vw", paddingRight: "1vw", marginTop: "3vh"}}>
+                    <Grid item xs={12} style={{paddingLeft: "1vw", paddingRight: "-1vw", marginTop: "3vh"}}>
                         <Paper>
                             <Tabs
                                 value={this.state.tabOption}
@@ -137,16 +137,18 @@ export default class PointPage extends React.Component {
                                 onChangeIndex={this.tabChangeHandler.bind(this)}
                             >
                                 <TabPanel value={this.state.tabOption} index={0}>
-                                    <SimpleDatePicker selectorDate={this.state.selectorDate}
-                                                      setDate={this.setDate.bind(this)}/>
-                                    <MuiThemeProvider theme={this.state.theme}>
-                                        <Button value={this.state.workStatus} onClick={this.setWorkStopStatus.bind(this)}
-                                                style={{maxWidth: "21vw", marginLeft: "3vw"}} variant="contained"
-                                                size={"medium"}
-                                                color={"primary"}>
-                                            {this.state.workStatus}
-                                        </Button>
-                                    </MuiThemeProvider>
+                                    <div align={"center"}>
+                                        <SimpleDatePicker selectorDate={this.state.selectorDate}
+                                                          setDate={this.setDate.bind(this)}/>
+                                        <MuiThemeProvider theme={this.state.theme}>
+                                            <Button value={this.state.workStatus} onClick={this.setWorkStopStatus.bind(this)}
+                                                    style={{width: "65vw", marginTop: "1vh"}} variant="contained"
+                                                    size={"medium"}
+                                                    color={"primary"}>
+                                                {this.state.workStatus}
+                                            </Button>
+                                        </MuiThemeProvider>
+                                    </div>
                                 </TabPanel>
                                 <TabPanel value={this.state.tabOption} index={1}>
                                     <Typography>PAGAMENTOS</Typography>
