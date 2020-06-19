@@ -19,6 +19,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import ConfigTabPanelContainer from "../../components/ConfigTabPanelContainer/ConfigTabPanelContainer";
+import CalendarTabPanelContainer from "../../components/CalendarTabPanelContainer/CalendarTabPanelContainer";
 
 const redTheme = createMuiTheme({palette: {primary: red}});
 const blueTheme = createMuiTheme({palette: {primary: blue}})
@@ -150,19 +151,7 @@ export default class PointPage extends React.Component {
                                 onChangeIndex={this.tabChangeHandler.bind(this)}
                             >
                                 <TabPanel value={this.state.tabOption} index={0}>
-                                    <div align={"center"}>
-                                        <SimpleDatePicker selectorDate={this.state.selectorDate}
-                                                          setDate={this.setDate.bind(this)}/>
-                                        <MuiThemeProvider theme={this.state.theme}>
-                                            <Button value={this.state.workStatus}
-                                                    onClick={this.setWorkStopStatus.bind(this)}
-                                                    style={{width: "65vw", marginTop: "1vh"}} variant={"contained"}
-                                                    size={"medium"}
-                                                    color={"primary"}>
-                                                {this.state.workStatus}
-                                            </Button>
-                                        </MuiThemeProvider>
-                                    </div>
+                                    <CalendarTabPanelContainer setWorkStopStatus={this.setWorkStopStatus.bind(this)} workStatus={this.state.workStatus} theme={this.state.theme} selectorDate={this.state.selectorDate} setDate={this.setDate.bind(this)}/>
                                 </TabPanel>
                                 <TabPanel value={this.state.tabOption} index={1}>
                                     <TableContainer component={Paper}>
