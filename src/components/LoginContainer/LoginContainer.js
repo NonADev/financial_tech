@@ -44,10 +44,13 @@ export default class LoginContainer extends React.Component {
         let db = useIndexedDB('funcionario');
         let logicalBoolean;
         db.getAll().then((items) => {
+            let e;
             for (let i = 0; i < items.length; i++) {
-                let e = items[i];
+                e = items[i];
                 if ((this.state.username === e.username) && (btoa(this.state.password) === e.password)) {
                     logicalBoolean = true;
+                    this.props.setUserData(e);
+                    console.log(e);
                     this.writeSystemAccess();
                     return;
                 }

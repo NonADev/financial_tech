@@ -69,10 +69,6 @@ export default class PointPage extends React.Component {
         });
     }
 
-    insertPoint() {
-
-    }
-
     setDate(v) {
         this.setState({
             selectorDate: v
@@ -108,7 +104,7 @@ export default class PointPage extends React.Component {
                             borderRadius: "30px",
                             color: "white",
                             backgroundColor: '#499bbf'
-                        }}>Gabi Sampaio</Button>
+                        }}>{this.props.userData.username}</Button>
                         <Button style={{
                             marginTop: "1vh",
                             minWidth: "60vw",
@@ -129,7 +125,7 @@ export default class PointPage extends React.Component {
                             </Grid>
                         </Paper>
                     </Grid>
-                    <Grid item xs={12} style={{paddingLeft: "1vw", paddingRight: "-1vw", marginTop: "3vh"}}>
+                    <Grid item xs={12} style={{paddingLeft: "1vw", marginRight: "1vw", marginTop: "3vh"}}>
                         <Paper>
                             <Tabs
                                 value={this.state.tabOption}

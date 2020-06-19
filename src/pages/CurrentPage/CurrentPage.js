@@ -6,8 +6,15 @@ export default class CurrentPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            userSecure: 0
+            userSecure: 0,
+            userData: {}
         }
+    }
+
+    setUserData(data) {
+        this.setState({
+            userData: data
+        })
     }
 
     setUserSecure(number) {
@@ -20,10 +27,11 @@ export default class CurrentPage extends React.Component {
         return (
             (this.state.userSecure === 0)
                 ? <LoginPage
+                    setUserData={this.setUserData.bind(this)}
                     userSecure={this.state.userSecure}
                     setUserSecure={this.setUserSecure.bind(this)}
                 />
-                : <PointPage resetDB={this.props.resetDB}/>
+                : <PointPage userData={this.state.userData} resetDB={this.props.resetDB}/>
         );
     }
 }

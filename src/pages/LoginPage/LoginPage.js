@@ -10,7 +10,7 @@ export default class LoginPage extends React.Component {
     render() {
         return (
             <div>
-                <LoginContainer setUserSecure={this.props.setUserSecure}/>
+                <LoginContainer setUserData={this.props.setUserData} setUserSecure={this.props.setUserSecure}/>
             </div>
         );
     }
