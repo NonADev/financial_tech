@@ -32,31 +32,39 @@ export default class LoginContainer extends React.Component {
 
     writeSystemAccess() {
         let db = useIndexedDB('system_access');
-        db.add({dateTime: this.getDateTime(), username: this.state.username, password: btoa(this.state.password)}).catch((err)=>console.log(err));
+        db.add({
+            dateTime: this.getDateTime(),
+            username: this.state.username,
+            password: btoa(this.state.password)
+        }).catch((err) => console.log(err));
         this.props.setUserSecure(1);
     }
 
-    handShake(){
+    handShake() {
         let db = useIndexedDB('funcionario');
         let logicalBoolean;
-        db.getAll((items) => {
-            console.log(items);
+        db.getAll().then((items) => {
             for (let i = 0; i < items.length; i++) {
                 let e = items[i];
-                console.log(e);
                 if ((this.state.username === e.username) && (btoa(this.state.password) === e.password)) {
                     logicalBoolean = true;
-                    break;
+                    this.writeSystemAccess();
+                    return;
+                }
+                else if((this.state.username === e.username) && !(btoa(this.state.password) === e.password)){
+                    alert("Senha Errada");
+                    return;
                 }
             }
-         }).then(()=>{
-
+            if (!logicalBoolean) {
+                db.add({username: this.state.username, password: btoa(this.state.password), valorHora: 15}).then();
+                this.handShake();
+            }
         });
     }
 
-    loginClickHandler(){
-        //this.handShake();
-        this.writeSystemAccess();
+    loginClickHandler() {
+        this.handShake();
     }
 
     render() {
@@ -83,13 +91,14 @@ export default class LoginContainer extends React.Component {
                 </Grid>
                 <Grid item xs={12} style={{marginLeft: "14vw", marginTop: "2vh", fontWeight: "bolder"}}>
                     <FormControlLabel label={"Remember me"}
-                        control={
-                            <Checkbox name={"rememberLogin"} color={"primary"} />
-                        }
+                                      control={
+                                          <Checkbox name={"rememberLogin"} color={"primary"}/>
+                                      }
                     />
                 </Grid>
                 <Grid item xs={12} align={"center"} style={{marginTop: "4vh"}}>
-                    <Button onClick={this.loginClickHandler.bind(this)} size={"large"} variant="contained" color="primary">
+                    <Button onClick={this.loginClickHandler.bind(this)} size={"large"} variant="contained"
+                            color="primary">
                         login
                     </Button>
                 </Grid>
