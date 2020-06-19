@@ -8,10 +8,8 @@ import SwipeableViews from 'react-swipeable-views';
 import Tab from '@material-ui/core/Tab';
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
-import SimpleDatePicker from "../../components/SimpleDatePicker/SimpleDatePicker";
 import {red, blue} from "@material-ui/core/colors";
-import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
-import {useIndexedDB} from "react-indexed-db";
+import {createMuiTheme} from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -87,7 +85,6 @@ export default class PointPage extends React.Component {
         })
     }
 
-
     render() {
         document.body.style.backgroundColor = '#eff2f2';
         let imgIcon = require("../../images/2858066.png");
@@ -151,7 +148,11 @@ export default class PointPage extends React.Component {
                                 onChangeIndex={this.tabChangeHandler.bind(this)}
                             >
                                 <TabPanel value={this.state.tabOption} index={0}>
-                                    <CalendarTabPanelContainer setWorkStopStatus={this.setWorkStopStatus.bind(this)} workStatus={this.state.workStatus} theme={this.state.theme} selectorDate={this.state.selectorDate} setDate={this.setDate.bind(this)}/>
+                                    <CalendarTabPanelContainer setWorkStopStatus={this.setWorkStopStatus.bind(this)}
+                                                               workStatus={this.state.workStatus}
+                                                               theme={this.state.theme}
+                                                               selectorDate={this.state.selectorDate}
+                                                               setDate={this.setDate.bind(this)}/>
                                 </TabPanel>
                                 <TabPanel value={this.state.tabOption} index={1}>
                                     <TableContainer component={Paper}>
@@ -164,9 +165,10 @@ export default class PointPage extends React.Component {
                                                 </TableRow>
                                             </TableHead>
                                             <TableBody>
+                                                {
                                                 <TableRow>
                                                     <TableCell>01/11/2020</TableCell>
-                                                    <TableCell align={"right"}>R$ 2100</TableCell>
+                                                    <TableCell align={"right"}>R$ 1850</TableCell>
                                                     <TableCell align={"right"}>
                                                         <Typography style={{
                                                             marginLeft: "3vw",
@@ -178,6 +180,7 @@ export default class PointPage extends React.Component {
                                                         }}/>
                                                     </TableCell>
                                                 </TableRow>
+                                                }
                                             </TableBody>
                                         </Table>
                                     </TableContainer>

@@ -6,16 +6,17 @@ export const DBConfig = {
             store: 'funcionario',
             storeConfig: { keyPath: 'id', autoIncrement: true },
             storeSchema: [
-                { name: 'nome', keypath: 'nome', options: { unique: false } },
-                { name: 'email', keypath: 'email', options: { unique: false } }
+                { name: 'username', keypath: 'username', options: { unique: false }},
+                { name: 'password', keypath: 'password', options: { unique: false }},
+                { name: 'valorHora', keypath: 'valorHora', options: { unique: false }}
             ]
         },
         {
-            store: 'ponto',
+            store: 'pontoBatido',
             storeConfig: {keyPath: 'id', autoIncrement: true},
             storeSchema: [
-                { name: 'horaInicio', keypath: 'horaInicio', options: {unique: false}},
-                { name: 'horaFim', keypath: 'horaFim', options: {unique: false}}
+                { name: 'fkFuncionario', keypath: 'fkFuncionario', options: {unique: false}},
+                { name: 'dataHora', keypath: 'dataHora', options: {unique: false}}
             ]
         },
         {

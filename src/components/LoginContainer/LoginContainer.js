@@ -30,10 +30,33 @@ export default class LoginContainer extends React.Component {
         return new Date().toLocaleString();
     }
 
-    writeAccess() {
+    writeSystemAccess() {
         let db = useIndexedDB('system_access');
         db.add({dateTime: this.getDateTime(), username: this.state.username, password: btoa(this.state.password)}).catch((err)=>console.log(err));
         this.props.setUserSecure(1);
+    }
+
+    handShake(){
+        let db = useIndexedDB('funcionario');
+        let logicalBoolean;
+        db.getAll((items) => {
+            console.log(items);
+            for (let i = 0; i < items.length; i++) {
+                let e = items[i];
+                console.log(e);
+                if ((this.state.username === e.username) && (btoa(this.state.password) === e.password)) {
+                    logicalBoolean = true;
+                    break;
+                }
+            }
+         }).then(()=>{
+
+        });
+    }
+
+    loginClickHandler(){
+        //this.handShake();
+        this.writeSystemAccess();
     }
 
     render() {
@@ -66,7 +89,7 @@ export default class LoginContainer extends React.Component {
                     />
                 </Grid>
                 <Grid item xs={12} align={"center"} style={{marginTop: "4vh"}}>
-                    <Button onClick={this.writeAccess.bind(this)} size={"large"} variant="contained" color="primary">
+                    <Button onClick={this.loginClickHandler.bind(this)} size={"large"} variant="contained" color="primary">
                         login
                     </Button>
                 </Grid>
