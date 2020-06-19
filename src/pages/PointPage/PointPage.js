@@ -9,11 +9,19 @@ import Tab from '@material-ui/core/Tab';
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import SimpleDatePicker from "../../components/SimpleDatePicker/SimpleDatePicker";
-import {red,blue} from "@material-ui/core/colors";
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import {red, blue} from "@material-ui/core/colors";
+import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
+import {useIndexedDB} from "react-indexed-db";
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import ConfigTabPanelContainer from "../../components/ConfigTabPanelContainer/ConfigTabPanelContainer";
 
 const redTheme = createMuiTheme({palette: {primary: red}});
-const blueTheme = createMuiTheme({ palette: { primary: blue } })
+const blueTheme = createMuiTheme({palette: {primary: blue}})
 
 function a11yProps(index) {
     return {
@@ -62,6 +70,10 @@ export default class PointPage extends React.Component {
         });
     }
 
+    insertPoint() {
+
+    }
+
     setDate(v) {
         this.setState({
             selectorDate: v
@@ -73,6 +85,7 @@ export default class PointPage extends React.Component {
             tabOption: v
         })
     }
+
 
     render() {
         document.body.style.backgroundColor = '#eff2f2';
@@ -141,8 +154,9 @@ export default class PointPage extends React.Component {
                                         <SimpleDatePicker selectorDate={this.state.selectorDate}
                                                           setDate={this.setDate.bind(this)}/>
                                         <MuiThemeProvider theme={this.state.theme}>
-                                            <Button value={this.state.workStatus} onClick={this.setWorkStopStatus.bind(this)}
-                                                    style={{width: "65vw", marginTop: "1vh"}} variant="contained"
+                                            <Button value={this.state.workStatus}
+                                                    onClick={this.setWorkStopStatus.bind(this)}
+                                                    style={{width: "65vw", marginTop: "1vh"}} variant={"contained"}
                                                     size={"medium"}
                                                     color={"primary"}>
                                                 {this.state.workStatus}
@@ -151,10 +165,36 @@ export default class PointPage extends React.Component {
                                     </div>
                                 </TabPanel>
                                 <TabPanel value={this.state.tabOption} index={1}>
-                                    <Typography>PAGAMENTOS</Typography>
+                                    <TableContainer component={Paper}>
+                                        <Table size={"small"} aria-label={"simple table"}>
+                                            <TableHead>
+                                                <TableRow>
+                                                    <TableCell>data</TableCell>
+                                                    <TableCell>Salário</TableCell>
+                                                    <TableCell>status</TableCell>
+                                                </TableRow>
+                                            </TableHead>
+                                            <TableBody>
+                                                <TableRow>
+                                                    <TableCell>01/11/2020</TableCell>
+                                                    <TableCell align={"right"}>R$ 2100</TableCell>
+                                                    <TableCell align={"right"}>
+                                                        <Typography style={{
+                                                            marginLeft: "3vw",
+                                                            border: "1px solid black",
+                                                            height: "20px",
+                                                            width: "20px",
+                                                            backgroundColor: "#0bfc03",
+                                                            borderRadius: "50%"
+                                                        }}/>
+                                                    </TableCell>
+                                                </TableRow>
+                                            </TableBody>
+                                        </Table>
+                                    </TableContainer>
                                 </TabPanel>
                                 <TabPanel value={this.state.tabOption} index={2}>
-                                    <Typography>OPÇÕES</Typography>
+                                    <ConfigTabPanelContainer resetDB={this.props.resetDB}/>
                                 </TabPanel>
                             </SwipeableViews>
                         </Paper>
