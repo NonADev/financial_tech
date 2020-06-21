@@ -80,7 +80,7 @@ export default class DinamicTable extends React.Component {
 
     render() {
         let rows = this.renderRows();
-        let sortedRows = this.ordenar(rows);
+        rows = this.ordenar(rows);
         return (
             <TableContainer component={Paper}>
                 <Table size={"small"} aria-label={"simple table"}>
