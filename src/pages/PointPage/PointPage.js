@@ -151,7 +151,7 @@ export default class PointPage extends React.Component {
                                                                setDate={this.setDate.bind(this)}/>
                                 </TabPanel>
                                 <TabPanel value={this.state.tabOption} index={1}>
-                                    <DinamicTable pontos={this.props.pontos}/>
+                                    <DinamicTable userData={this.props.userData} pontos={this.props.pontos}/>
                                 </TabPanel>
                                 <TabPanel value={this.state.tabOption} index={2}>
                                     <ConfigTabPanelContainer resetDB={this.props.resetDB}/>
