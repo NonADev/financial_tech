@@ -9,17 +9,35 @@ import TableContainer from "@material-ui/core/TableContainer";
 import React from "react";
 
 export default class DinamicTable extends React.Component {
-    calcSalario(){
+    calcSalario() {
         let datas = this.props.pontos;
-
+        let pontos = {};
+        for (let i = 0; i < datas.length; i++) {
+            let c = new Date(datas[i].dataHora).toLocaleDateString();
+            pontos[c] = false;
+        } // retorna datas unicas, retirando duplicatas
+        let properties = Object.keys(pontos);
+        let mes_ano = {};
+        while (properties[0] != null) {
+            let prop = properties.pop();
+            let mes = prop.split("/")[1], ano = prop.split("/")[2];
+            if (mes_ano[mes + "_" + ano] === undefined || mes_ano[mes + "_" + ano] === null) {
+                mes_ano[mes + "_" + ano] = 0
+            } else {
+                mes_ano[mes + "_" + ano]++;
+            }
+        }
+        console.log(mes_ano);
     }
-    renderRows(){
+
+    renderRows() {
+        this.calcSalario();
         let rows = [];
         this.props.pontos.forEach((value) => {
             rows.push(
                 <TableRow key={value.id}>
-                    <TableCell>{new Date(value.dataHora).toLocaleDateString()}</TableCell>
-                    <TableCell align={"right"}>R$ 1850</TableCell>
+                    <TableCell>{new Date(value.dataHora).toLocaleString()}</TableCell>
+                    <TableCell align={"center"}>R$ 1850</TableCell>
                     <TableCell align={"right"}>
                         <Typography style={{
                             marginLeft: "3vw",
