@@ -30,27 +30,38 @@ export default class DinamicTable extends React.Component {
         return mes_ano;
     }
 
+    ordenar(data) {
+        let r = data.sort((a, b) => {
+            let keyA = parseInt(a.key.split("/")[1]), keyB = parseInt(b.key.split("/")[1]);
+            if (keyA > keyB) return 1;
+            if (keyA < keyB) return -1;
+            keyA = parseInt(a.key.split("/")[0]);
+            keyB = parseInt(b.key.split("/")[0]);
+            if (keyA > keyB) return 1;
+            if (keyA < keyB) return -1;
+        });
+        return r;
+    }
+
     renderRows() {
         let mes_ano = this.calcSalario();
         let rows = [];
-        console.log(mes_ano);
         let properties = Object.keys(mes_ano);
         while (properties[0] != null) {
             let prop = properties.pop();
             let propDate = prop.replace("_", "/");
             let mes = prop.split("_")[0], ano = prop.split("_")[1];
-            let mesAtual = new Date().getMonth()+1, anoAtual = new Date().getFullYear();
+            let mesAtual = new Date().getMonth() + 1, anoAtual = new Date().getFullYear();
             let circleColor = "#0341fc";
-            if((ano>anoAtual)||(mes>mesAtual)){
+            if ((ano > anoAtual) || (mes > mesAtual)) {
                 circleColor = "#fc0303";
-            }
-            else{
+            } else {
                 circleColor = "#0bfc03";
             }
             rows.push(
                 <TableRow key={propDate}>
                     <TableCell>{propDate}</TableCell>
-                    <TableCell align={"center"}>R$ {this.props.userData.valorHora * mes_ano[prop]}</TableCell>
+                    <TableCell align={"center"}>R$ {this.props.userData.valorHora * mes_ano[prop] * 8}</TableCell>
                     <TableCell align={"right"}>
                         <Typography style={{
                             marginLeft: "3vw",
@@ -64,35 +75,12 @@ export default class DinamicTable extends React.Component {
                 </TableRow>
             );
         }
-
-
-
-
-
-
-        // this.props.pontos.forEach((value) => {
-        //     rows.push(
-        //         <TableRow key={value.id}>
-        //             <TableCell>{new Date(value.dataHora).toLocaleString()}</TableCell>
-        //             <TableCell align={"center"}>R$ 1850</TableCell>
-        //             <TableCell align={"right"}>
-        //                 <Typography style={{
-        //                     marginLeft: "3vw",
-        //                     border: "1px solid black",
-        //                     height: "20px",
-        //                     width: "20px",
-        //                     backgroundColor: "#0bfc03",
-        //                     borderRadius: "50%"
-        //                 }}/>
-        //             </TableCell>
-        //         </TableRow>
-        //     );
-        // });
         return rows;
     }
 
     render() {
         let rows = this.renderRows();
+        let sortedRows = this.ordenar(rows);
         return (
             <TableContainer component={Paper}>
                 <Table size={"small"} aria-label={"simple table"}>
