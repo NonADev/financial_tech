@@ -50,7 +50,7 @@ export default class LoginContainer extends React.Component {
                 if ((this.state.username === e.username) && (btoa(this.state.password) === e.password)) {
                     logicalBoolean = true;
                     this.props.setUserData(e);
-                    console.log(e);
+                    this.props.getPontosById(e.id);
                     this.writeSystemAccess();
                     return;
                 }

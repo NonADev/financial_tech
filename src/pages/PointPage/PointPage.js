@@ -10,14 +10,10 @@ import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import {red, blue} from "@material-ui/core/colors";
 import {createMuiTheme} from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
+import DinamicTable from "../../components/DinamicTable/DinamicTable";
 import ConfigTabPanelContainer from "../../components/ConfigTabPanelContainer/ConfigTabPanelContainer";
 import CalendarTabPanelContainer from "../../components/CalendarTabPanelContainer/CalendarTabPanelContainer";
+import {useIndexedDB} from "react-indexed-db";
 
 const redTheme = createMuiTheme({palette: {primary: red}});
 const blueTheme = createMuiTheme({palette: {primary: blue}})
@@ -55,7 +51,8 @@ export default class PointPage extends React.Component {
             tabOption: 0,
             selectorDate: new Date(),
             workStatus: "resting",
-            theme: blueTheme
+            theme: blueTheme,
+            pontosFormatados: null
         };
     }
 
@@ -67,6 +64,9 @@ export default class PointPage extends React.Component {
             workStatus: set,
             theme: the
         });
+        let db = useIndexedDB('pontoBatido');
+        db.add({fkFuncionario: this.props.userData.id, dataHora: this.state.selectorDate.toUTCString()}).then();
+        this.props.getPontosById(this.props.userData.id);
     }
 
     setDate(v) {
@@ -151,35 +151,7 @@ export default class PointPage extends React.Component {
                                                                setDate={this.setDate.bind(this)}/>
                                 </TabPanel>
                                 <TabPanel value={this.state.tabOption} index={1}>
-                                    <TableContainer component={Paper}>
-                                        <Table size={"small"} aria-label={"simple table"}>
-                                            <TableHead>
-                                                <TableRow>
-                                                    <TableCell>data</TableCell>
-                                                    <TableCell>Salário</TableCell>
-                                                    <TableCell>status</TableCell>
-                                                </TableRow>
-                                            </TableHead>
-                                            <TableBody>
-                                                {
-                                                <TableRow>
-                                                    <TableCell>01/11/2020</TableCell>
-                                                    <TableCell align={"right"}>R$ 1850</TableCell>
-                                                    <TableCell align={"right"}>
-                                                        <Typography style={{
-                                                            marginLeft: "3vw",
-                                                            border: "1px solid black",
-                                                            height: "20px",
-                                                            width: "20px",
-                                                            backgroundColor: "#0bfc03",
-                                                            borderRadius: "50%"
-                                                        }}/>
-                                                    </TableCell>
-                                                </TableRow>
-                                                }
-                                            </TableBody>
-                                        </Table>
-                                    </TableContainer>
+                                    <DinamicTable pontos={this.props.pontos}/>
                                 </TabPanel>
                                 <TabPanel value={this.state.tabOption} index={2}>
                                     <ConfigTabPanelContainer resetDB={this.props.resetDB}/>

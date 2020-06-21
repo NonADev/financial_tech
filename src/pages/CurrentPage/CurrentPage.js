@@ -1,14 +1,33 @@
 import React from 'react';
 import LoginPage from "../LoginPage/LoginPage";
 import PointPage from "../PointPage/PointPage";
+import {useIndexedDB} from "react-indexed-db";
 
 export default class CurrentPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             userSecure: 0,
-            userData: {}
+            userData: {},
+            pontos: null
         }
+    }
+
+    getAllPontos() {
+        let db = useIndexedDB('pontoBatido');
+        let allRows = db.getAll().then((rows) => {
+            this.setState({pontos: rows});
+        });
+    }
+
+    getPontosById(id) {
+        let db = useIndexedDB('pontoBatido');
+        let allRows = db.getAll().then((rows) => {
+            let ownRows = rows.filter((value) => {
+                return value.fkFuncionario === id;
+            });
+            this.setState({pontos: ownRows});
+        });
     }
 
     setUserData(data) {
@@ -27,11 +46,12 @@ export default class CurrentPage extends React.Component {
         return (
             (this.state.userSecure === 0)
                 ? <LoginPage
+                    getPontosById={this.getPontosById.bind(this)}
                     setUserData={this.setUserData.bind(this)}
                     userSecure={this.state.userSecure}
                     setUserSecure={this.setUserSecure.bind(this)}
                 />
-                : <PointPage userData={this.state.userData} resetDB={this.props.resetDB}/>
+                : <PointPage pontos={this.state.pontos} getPontosById={this.getPontosById.bind(this)} userData={this.state.userData} resetDB={this.props.resetDB}/>
         );
     }
 }

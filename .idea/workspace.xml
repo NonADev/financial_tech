@@ -20,10 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a625c90f-d82a-4c6a-aa39-95827607353b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/wesley_lima.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/userControl/main_test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DinamicTable/DinamicTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/wesley_lima.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/wesley_lima.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userControl/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/userControl/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CalendarTabPanelContainer/CalendarTabPanelContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CalendarTabPanelContainer/CalendarTabPanelContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LoginContainer/LoginContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginContainer/LoginContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CurrentPage/CurrentPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CurrentPage/CurrentPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LoginPage/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginPage/LoginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/PointPage/PointPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PointPage/PointPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +74,7 @@
       <recent name="$PROJECT_DIR$/src/pages/LoginPage" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.main_test.js">
+  <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -117,7 +121,7 @@
       <workItem from="1592258535588" duration="6918000" />
       <workItem from="1592346020288" duration="1471000" />
       <workItem from="1592519188909" duration="12439000" />
-      <workItem from="1592690480995" duration="7920000" />
+      <workItem from="1592690480995" duration="16405000" />
     </task>
     <servers />
   </component>
@@ -145,26 +149,30 @@
       <screen x="0" y="0" width="1366" height="725" />
     </state>
     <state x="389" y="49" width="578" height="637" key="#npm_start/0.0.1366.725@0.0.1366.725" timestamp="1592008264927" />
-    <state width="1577" height="223" key="GridCell.Tab.0.bottom" timestamp="1592698109222">
+    <state width="1577" height="223" key="GridCell.Tab.0.bottom" timestamp="1592701494533">
       <screen x="0" y="0" width="1600" height="725" />
     </state>
     <state width="1343" height="166" key="GridCell.Tab.0.bottom/0.0.1366.725@0.0.1366.725" timestamp="1592532859823" />
-    <state width="1577" height="223" key="GridCell.Tab.0.bottom/1600.0.1366.768/0.0.1600.725@0.0.1600.725" timestamp="1592698109222" />
-    <state width="1577" height="223" key="GridCell.Tab.0.center" timestamp="1592698109222">
+    <state width="1577" height="223" key="GridCell.Tab.0.bottom/1600.0.1366.768/0.0.1600.725@0.0.1600.725" timestamp="1592701494533" />
+    <state width="1577" height="223" key="GridCell.Tab.0.center" timestamp="1592701494533">
       <screen x="0" y="0" width="1600" height="725" />
     </state>
     <state width="1343" height="166" key="GridCell.Tab.0.center/0.0.1366.725@0.0.1366.725" timestamp="1592532859823" />
-    <state width="1577" height="223" key="GridCell.Tab.0.center/1600.0.1366.768/0.0.1600.725@0.0.1600.725" timestamp="1592698109222" />
-    <state width="1577" height="223" key="GridCell.Tab.0.left" timestamp="1592698109222">
+    <state width="1577" height="223" key="GridCell.Tab.0.center/1600.0.1366.768/0.0.1600.725@0.0.1600.725" timestamp="1592701494533" />
+    <state width="1577" height="223" key="GridCell.Tab.0.left" timestamp="1592701494533">
       <screen x="0" y="0" width="1600" height="725" />
     </state>
     <state width="1343" height="166" key="GridCell.Tab.0.left/0.0.1366.725@0.0.1366.725" timestamp="1592532859823" />
-    <state width="1577" height="223" key="GridCell.Tab.0.left/1600.0.1366.768/0.0.1600.725@0.0.1600.725" timestamp="1592698109222" />
-    <state width="1577" height="223" key="GridCell.Tab.0.right" timestamp="1592698109222">
+    <state width="1577" height="223" key="GridCell.Tab.0.left/1600.0.1366.768/0.0.1600.725@0.0.1600.725" timestamp="1592701494533" />
+    <state width="1577" height="223" key="GridCell.Tab.0.right" timestamp="1592701494533">
       <screen x="0" y="0" width="1600" height="725" />
     </state>
     <state width="1343" height="166" key="GridCell.Tab.0.right/0.0.1366.725@0.0.1366.725" timestamp="1592532859823" />
-    <state width="1577" height="223" key="GridCell.Tab.0.right/1600.0.1366.768/0.0.1600.725@0.0.1600.725" timestamp="1592698109222" />
+    <state width="1577" height="223" key="GridCell.Tab.0.right/1600.0.1366.768/0.0.1600.725@0.0.1600.725" timestamp="1592701494533" />
+    <state x="605" y="366" width="389" height="178" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592706602232">
+      <screen x="0" y="0" width="1600" height="725" />
+    </state>
+    <state x="605" y="366" width="389" height="178" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1600.0.1366.768/0.0.1600.725@0.0.1600.725" timestamp="1592706602232" />
     <state x="389" y="0" width="587" height="725" key="find.popup" timestamp="1592270835266">
       <screen x="0" y="0" width="1366" height="725" />
     </state>
