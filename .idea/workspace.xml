@@ -20,12 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a625c90f-d82a-4c6a-aa39-95827607353b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/userControl/User.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/wesley_lima.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/userControl/main_test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoginContainer/LoginContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginContainer/LoginContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CurrentPage/CurrentPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CurrentPage/CurrentPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/LoginPage/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginPage/LoginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/PointPage/PointPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PointPage/PointPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/userControl/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/userControl/User.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,11 +70,14 @@
       <recent name="$PROJECT_DIR$/src/pages/LoginPage" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.User.js">
+  <component name="RunManager" selected="Node.js.main_test.js">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
     <configuration name="User.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/userControl/User.js" working-dir="$PROJECT_DIR$/src/userControl">
+      <method v="2" />
+    </configuration>
+    <configuration name="main_test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/userControl/main_test.js" working-dir="$PROJECT_DIR$/src/userControl">
       <method v="2" />
     </configuration>
     <configuration name="npm start" type="js.build_tools.npm">
@@ -91,6 +92,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.main_test.js" />
         <item itemvalue="Node.js.User.js" />
       </list>
     </recent_temporary>
@@ -114,7 +116,8 @@
       <workItem from="1592167206554" duration="4258000" />
       <workItem from="1592258535588" duration="6918000" />
       <workItem from="1592346020288" duration="1471000" />
-      <workItem from="1592519188909" duration="12310000" />
+      <workItem from="1592519188909" duration="12439000" />
+      <workItem from="1592690480995" duration="7920000" />
     </task>
     <servers />
   </component>
@@ -142,30 +145,35 @@
       <screen x="0" y="0" width="1366" height="725" />
     </state>
     <state x="389" y="49" width="578" height="637" key="#npm_start/0.0.1366.725@0.0.1366.725" timestamp="1592008264927" />
-    <state width="1343" height="166" key="GridCell.Tab.0.bottom" timestamp="1592532720356">
-      <screen x="0" y="0" width="1366" height="725" />
+    <state width="1577" height="223" key="GridCell.Tab.0.bottom" timestamp="1592698109222">
+      <screen x="0" y="0" width="1600" height="725" />
     </state>
-    <state width="1343" height="166" key="GridCell.Tab.0.bottom/0.0.1366.725@0.0.1366.725" timestamp="1592532720356" />
-    <state width="1343" height="166" key="GridCell.Tab.0.center" timestamp="1592532720356">
-      <screen x="0" y="0" width="1366" height="725" />
+    <state width="1343" height="166" key="GridCell.Tab.0.bottom/0.0.1366.725@0.0.1366.725" timestamp="1592532859823" />
+    <state width="1577" height="223" key="GridCell.Tab.0.bottom/1600.0.1366.768/0.0.1600.725@0.0.1600.725" timestamp="1592698109222" />
+    <state width="1577" height="223" key="GridCell.Tab.0.center" timestamp="1592698109222">
+      <screen x="0" y="0" width="1600" height="725" />
     </state>
-    <state width="1343" height="166" key="GridCell.Tab.0.center/0.0.1366.725@0.0.1366.725" timestamp="1592532720356" />
-    <state width="1343" height="166" key="GridCell.Tab.0.left" timestamp="1592532720356">
-      <screen x="0" y="0" width="1366" height="725" />
+    <state width="1343" height="166" key="GridCell.Tab.0.center/0.0.1366.725@0.0.1366.725" timestamp="1592532859823" />
+    <state width="1577" height="223" key="GridCell.Tab.0.center/1600.0.1366.768/0.0.1600.725@0.0.1600.725" timestamp="1592698109222" />
+    <state width="1577" height="223" key="GridCell.Tab.0.left" timestamp="1592698109222">
+      <screen x="0" y="0" width="1600" height="725" />
     </state>
-    <state width="1343" height="166" key="GridCell.Tab.0.left/0.0.1366.725@0.0.1366.725" timestamp="1592532720356" />
-    <state width="1343" height="166" key="GridCell.Tab.0.right" timestamp="1592532720356">
-      <screen x="0" y="0" width="1366" height="725" />
+    <state width="1343" height="166" key="GridCell.Tab.0.left/0.0.1366.725@0.0.1366.725" timestamp="1592532859823" />
+    <state width="1577" height="223" key="GridCell.Tab.0.left/1600.0.1366.768/0.0.1600.725@0.0.1600.725" timestamp="1592698109222" />
+    <state width="1577" height="223" key="GridCell.Tab.0.right" timestamp="1592698109222">
+      <screen x="0" y="0" width="1600" height="725" />
     </state>
-    <state width="1343" height="166" key="GridCell.Tab.0.right/0.0.1366.725@0.0.1366.725" timestamp="1592532720356" />
+    <state width="1343" height="166" key="GridCell.Tab.0.right/0.0.1366.725@0.0.1366.725" timestamp="1592532859823" />
+    <state width="1577" height="223" key="GridCell.Tab.0.right/1600.0.1366.768/0.0.1600.725@0.0.1600.725" timestamp="1592698109222" />
     <state x="389" y="0" width="587" height="725" key="find.popup" timestamp="1592270835266">
       <screen x="0" y="0" width="1366" height="725" />
     </state>
     <state x="389" y="0" width="587" height="725" key="find.popup/0.0.1366.725@0.0.1366.725" timestamp="1592270835266" />
-    <state x="347" y="156" key="run.anything.popup" timestamp="1591930713922">
-      <screen x="0" y="0" width="1366" height="725" />
+    <state x="406" y="156" key="run.anything.popup" timestamp="1592697417947">
+      <screen x="0" y="0" width="1600" height="725" />
     </state>
     <state x="347" y="156" key="run.anything.popup/0.0.1366.725@0.0.1366.725" timestamp="1591930713922" />
+    <state x="406" y="156" key="run.anything.popup/1600.0.1366.768/0.0.1600.725@0.0.1600.725" timestamp="1592697417947" />
     <state x="346" y="46" width="672" height="678" key="search.everywhere.popup" timestamp="1592081876289">
       <screen x="0" y="0" width="1366" height="725" />
     </state>
