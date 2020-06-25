@@ -2,6 +2,7 @@ import React from 'react';
 import LoginPage from "../LoginPage/LoginPage";
 import PointPage from "../PointPage/PointPage";
 import {useIndexedDB} from "react-indexed-db";
+import AdminUI from "../AdminUI/AdminUI";
 
 export default class CurrentPage extends React.Component {
     constructor(props) {
@@ -51,7 +52,14 @@ export default class CurrentPage extends React.Component {
                     userSecure={this.state.userSecure}
                     setUserSecure={this.setUserSecure.bind(this)}
                 />
-                : <PointPage pontos={this.state.pontos} getPontosById={this.getPontosById.bind(this)} userData={this.state.userData} resetDB={this.props.resetDB}/>
+                : (this.state.userSecure === 1)
+                ? <PointPage setUserSecure={this.setUserSecure.bind(this)}
+                             pontos={this.state.pontos}
+                             getPontosById={this.getPontosById.bind(this)}
+                             userData={this.state.userData}
+                             resetDB={this.props.resetDB}/>
+                : <AdminUI pontos={this.state.pontos}
+                           userData={this.state.userData}/>
         );
     }
 }

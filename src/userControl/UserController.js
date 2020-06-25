@@ -110,7 +110,7 @@ let UserController = {
             }
         }
     },
-    getAll() { //implementar dps para pegar do banco todos
+    getAll() {
         return this.initial;
     }
 }

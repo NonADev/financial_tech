@@ -5,7 +5,7 @@ export default class ConfigTabPanelContainer extends React.Component{
     render() {
         return(
             <div align={"center"}>
-                <Button style={{minWidth: "14vw", marginTop: "1vh"}} variant="contained"
+                <Button onClick={()=>this.props.setUserSecure(2)} style={{minWidth: "14vw", marginTop: "1vh"}} variant="contained"
                         color="primary">
                     AdminUI
                 </Button>

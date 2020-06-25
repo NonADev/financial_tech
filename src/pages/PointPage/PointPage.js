@@ -72,13 +72,13 @@ export default class PointPage extends React.Component {
     setDate(v) {
         this.setState({
             selectorDate: v
-        })
+        });
     }
 
     tabChangeHandler(e, v) {
         this.setState({
             tabOption: v
-        })
+        });
     }
 
     render() {
@@ -154,7 +154,7 @@ export default class PointPage extends React.Component {
                                     <DinamicTable userData={this.props.userData} pontos={this.props.pontos}/>
                                 </TabPanel>
                                 <TabPanel value={this.state.tabOption} index={2}>
-                                    <ConfigTabPanelContainer resetDB={this.props.resetDB}/>
+                                    <ConfigTabPanelContainer setUserSecure={this.props.setUserSecure} resetDB={this.props.resetDB}/>
                                 </TabPanel>
                             </SwipeableViews>
                         </Paper>
