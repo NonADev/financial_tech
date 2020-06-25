@@ -14,16 +14,16 @@ export default class CurrentPage extends React.Component {
         }
     }
 
-    getAllPontos() {
-        let db = useIndexedDB('pontoBatido');
-        let allRows = db.getAll().then((rows) => {
-            this.setState({pontos: rows});
-        });
-    }
+    // getAllPontos() {
+    //     let db = useIndexedDB('pontoBatido');
+    //     let allRows = db.getAll().then((rows) => {
+    //         this.setState({pontos: rows});
+    //     });
+    // }
 
     getPontosById(id) {
         let db = useIndexedDB('pontoBatido');
-        let allRows = db.getAll().then((rows) => {
+        db.getAll().then((rows) => {
             let ownRows = rows.filter((value) => {
                 return value.fkFuncionario === id;
             });
@@ -59,7 +59,8 @@ export default class CurrentPage extends React.Component {
                              userData={this.state.userData}
                              resetDB={this.props.resetDB}/>
                 : <AdminUI pontos={this.state.pontos}
-                           userData={this.state.userData}/>
+                           userData={this.state.userData}
+                           setUserSecure={this.setUserSecure.bind(this)}/>
         );
     }
 }

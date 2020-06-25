@@ -1,15 +1,20 @@
 import React from "react";
 import {useIndexedDB} from "react-indexed-db";
-import {BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
+import {VictoryChart, VictoryBar, VictoryTheme} from 'victory';
 import _ from 'lodash';
 import UserController from '../../userControl/UserController';
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import Paper from "@material-ui/core/Paper";
+import Box from "@material-ui/core/Box";
 
 export default class AdminUI extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            AllUsersData: []
+            AllUsersData: [],
+            salarioTotal: 0
         }
     }
 
@@ -34,16 +39,24 @@ export default class AdminUI extends React.Component {
                         if (ponto.fkFuncionario === funcionario.id) pontosFuncionario.push(ponto);
                     });
                     funcionario.salario = this.getSalarioMesAtual(pontosFuncionario);
+                    UserController.addInicio(funcionario);
+                    let UserToData = this.state.AllUsersData;
+                    UserToData.push(funcionario);
+                    this.setState({AllUsersData: Array.from(UserToData)});
+                    this.getSalarioTotal();
                 });
-                UserController.addInicio(funcionario);
-                let UserToData = this.state.AllUsersData;
-                if(funcionario.salario<=0) funcionario.salario=300;
-                UserToData.push(funcionario);
-                this.setState({AllUsersData: Array.from(UserToData)});
             });
             console.log(this.state.AllUsersData);
             // this.setState({AllUsersData: UserController.getAll()}); //não precisa
         });
+    }
+
+    getSalarioTotal() {
+        let total = 0;
+        this.state.AllUsersData.forEach((elem) => {
+            total += elem.salario;
+        });
+        this.setState({salarioTotal: total});
     }
 
     componentDidMount() {
@@ -59,25 +72,39 @@ export default class AdminUI extends React.Component {
         // tmp.password = User.password;
         // tmp.cargo = User.cargo;
         // tmp.valorHora = User.valorHora;
-        console.log(this.state.AllUsersData);
         return (
-            <div style={{backgroundColor: "white"}}>
-                <BarChart
-                    width={700} //350
-                    height={450}//300
-                    margin={{
-                        top: 0, right: 0, left: 0, bottom: 0,
-                    }}
-                    data={this.state.AllUsersData}
+            <div style={{
+                boxShadow: "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
+                backgroundColor: "white"
+            }}>
+                <Typography>Salarios do Mês {new Date().toLocaleDateString().split("/")[1]}</Typography>
+                <VictoryChart
+                    theme={VictoryTheme.material}
                 >
-                    <XAxis type="category" dataKey="username"/>
-                    <YAxis type="number"/>
-                    <Tooltip/>
-                    <CartesianGrid strokeDasharray="3 3"/>
-                    <Legend/>
-                    <Bar dataKey="id" stroke="#8884d8" fill={"#8884d8"} background={{stroke: '#8884d8'}}
-                         isAnimationActive={false} barSize={20}/>
-                </BarChart>
+                    <VictoryBar
+                        alignment="start"
+                        barWidth={30}
+                        // horizontal
+                        data={this.state.AllUsersData}
+                        x={"username"}
+                        y={"salario"}
+                    />
+                </VictoryChart>
+                <Box>
+                    <Typography>Salario Total do time:</Typography>
+                    <Typography>{this.state.salarioTotal}</Typography>
+                </Box>
+                <Box>
+                    {this.state.AllUsersData.map((elem)=>{
+                        if(elem.username === "") return;
+                        return (<Typography>{elem.username} ganhou {elem.salario}</Typography>)
+                    })}
+                </Box>
+                <Button onClick={() => {
+                    this.props.setUserSecure(1)
+                }} variant="contained" color="primary">
+                    Voltar
+                </Button>
             </div>
         )
     }

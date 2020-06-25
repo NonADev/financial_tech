@@ -31,7 +31,8 @@ export default class DinamicTable extends React.Component {
     }
 
     ordenar(data) {
-        let r = data.sort((a, b) => {
+        // eslint-disable-next-line array-callback-return
+        data.sort((a, b) => {
             let keyA = parseInt(a.key.split("/")[1]), keyB = parseInt(b.key.split("/")[1]);
             if (keyA > keyB) return 1;
             if (keyA < keyB) return -1;
@@ -40,7 +41,6 @@ export default class DinamicTable extends React.Component {
             if (keyA > keyB) return 1;
             if (keyA < keyB) return -1;
         });
-        return r;
     }
 
     renderRows() {
