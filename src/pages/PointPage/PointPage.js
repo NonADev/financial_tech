@@ -85,6 +85,10 @@ export default class PointPage extends React.Component {
         return (this.props.userData.username==="")?<span>Recursos Humanos</span>:<span>React Developer</span>;
     }
 
+    returnNome() {
+        return (this.props.userData.username==="")?<span>Recursos Humanos</span>:<span>{this.props.userData.username}</span>;
+    }
+
     render() {
         document.body.style.backgroundColor = '#eff2f2';
         let imgIcon = require("../../images/2858066.png");
@@ -108,7 +112,7 @@ export default class PointPage extends React.Component {
                             borderRadius: "30px",
                             color: "white",
                             backgroundColor: '#499bbf'
-                        }}>{this.props.userData.username}</Button>
+                        }}>{this.returnNome()}</Button>
                         <Button style={{
                             marginTop: "1vh",
                             minWidth: "60vw",

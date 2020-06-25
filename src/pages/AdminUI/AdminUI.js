@@ -98,14 +98,14 @@ export default class AdminUI extends React.Component {
                         if (this.props.userData.username === "") {
                             return (
                                 <Typography>
-                                    {elem.username} trabalhou {elem.salario / 15} dias e ganhou R${elem.salario}
+                                    {elem.username} trabalhou {elem.salario / 8/15} dias e recebeu salario de R${elem.salario}
                                 </Typography>
                             )
                         }
                         else if(this.props.userData.id === elem.id){
                             return (
                                 <Typography>
-                                    {elem.username} trabalhou {elem.salario / 15} dias e ganhou R${elem.salario}
+                                    {elem.username} trabalhou {elem.salario / 8/15} dias e recebeu salario de R${elem.salario}
                                 </Typography>
                             )
                         }
