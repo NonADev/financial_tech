@@ -5,7 +5,6 @@ import _ from 'lodash';
 import UserController from '../../userControl/UserController';
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 
 export default class AdminUI extends React.Component {
@@ -46,7 +45,7 @@ export default class AdminUI extends React.Component {
                     this.getSalarioTotal();
                 });
             });
-            console.log(this.state.AllUsersData);
+            // console.log(this.state.AllUsersData);
             // this.setState({AllUsersData: UserController.getAll()}); //não precisa
         });
     }
@@ -91,13 +90,25 @@ export default class AdminUI extends React.Component {
                     />
                 </VictoryChart>
                 <Box>
-                    <Typography>Salario Total do time:</Typography>
-                    <Typography>{this.state.salarioTotal}</Typography>
+                    <Typography>Salario Total do time do mes: {this.state.salarioTotal}</Typography>
                 </Box>
                 <Box>
-                    {this.state.AllUsersData.map((elem)=>{
-                        if(elem.username === "") return;
-                        return (<Typography>{elem.username} ganhou {elem.salario}</Typography>)
+                    {this.state.AllUsersData.map((elem) => {
+                        // eslint-disable-next-line array-callback-return
+                        if (this.props.userData.username === "") {
+                            return (
+                                <Typography>
+                                    {elem.username} trabalhou {elem.salario / 15} dias e ganhou R${elem.salario}
+                                </Typography>
+                            )
+                        }
+                        else if(this.props.userData.id === elem.id){
+                            return (
+                                <Typography>
+                                    {elem.username} trabalhou {elem.salario / 15} dias e ganhou R${elem.salario}
+                                </Typography>
+                            )
+                        }
                     })}
                 </Box>
                 <Button onClick={() => {
